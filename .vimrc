@@ -12,5 +12,7 @@ set number			" shows line numbers
 set wrapscan 			" wraps search around when reaches either end
 call plug#begin('~/.vim/plugged')
 " Add your plugins here. Format for that Plug "githubusername/repo-name"
+Plug 'tpope/vim-fugitive' 	" A git wrapper for vim
+Plug 'preservim/nerdtree' 	" A file browser for vim
 call plug#end()
 
