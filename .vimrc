@@ -22,7 +22,8 @@ Plug 'tpope/vim-fugitive' 				" A git wrapper for vim
 Plug 'preservim/nerdtree' 				" A file browser for vim
 Plug 'Xuyuanp/nerdtree-git-plugin' 			" A plugin for showing git status of a file/folder in nerdtree view
 Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activity in vim.
-"
+Plug 'kien/ctrlp.vim'					" Ctrl+P functionality for vim
+
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 	" go language support for vim.
