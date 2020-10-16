@@ -12,12 +12,15 @@ syntax on                  " Enable syntax highlighting.
 set number		" shows line numbers
 
 call plug#begin('~/.vim/plugged')
+" Add your plugins here. Format for that Plug "githubusername/repo-name"
 call plug#end()
 
 " Put all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 " Saving might fail for the first time when the setup is done.
 " This can be because by default the files folder doesn't exist
+" Run the commands to create folders inside .vim for this by running following
+" mkdir files  && cd files && mkdir backup undofile
 set backup
 set backupdir   =$HOME/.vim/files/backup/
 set backupext   =-vimbackup
