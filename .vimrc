@@ -14,3 +14,17 @@ set number		" shows line numbers
 call plug#begin('~/.vim/plugged')
 call plug#end()
 
+" Put all temporary files under the same directory.
+" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
+" Saving might fail for the first time when the setup is done.
+" This can be because by default the files folder doesn't exist
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap//
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+" set viminfo     ='100,n$HOME/.vim/files/info/viminfo
+
