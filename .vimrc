@@ -14,7 +14,7 @@ set showcmd						" Show already typed keys when more are expected.
 set incsearch          		   	 		" Highlight while searching with / or ?.
 set hlsearch              				" Keep matches highlighted.
 set autoindent						" Creates indents based on the previous line. Read from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-set ruler						" shows the current cursor position. May not be required if a custom plugin like ale is used
+" set ruler						" shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
 
 " Plugins Section Starts here
 call plug#begin('~/.vim/plugged')
@@ -25,6 +25,9 @@ Plug 'preservim/nerdtree' 				" A file browser for vim
 Plug 'Xuyuanp/nerdtree-git-plugin' 			" A plugin for showing git status of a file/folder in nerdtree view
 Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activity in vim.
 Plug 'kien/ctrlp.vim'					" Ctrl+P functionality for vim for picking files in the current project
+
+
+Plug 'vim-airline/vim-airline'				" Status bar for vim
 
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
