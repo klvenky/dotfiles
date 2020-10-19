@@ -6,6 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Basic configuration for file editing & basi vim usage
 filetype plugin indent on  				" Load plugins according to detected filetype.
 syntax on                  				" Enable syntax highlighting.
 set number						" shows line numbers
@@ -15,6 +16,9 @@ set incsearch          		   	 		" Highlight while searching with / or ?.
 set hlsearch              				" Keep matches highlighted.
 set autoindent						" Creates indents based on the previous line. Read from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 " set ruler						" shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
+set hidden						" Switch between buffers without having to save first. Not clear on what this option really does. But could be helpful. Needs some thorough reading in depth
+set autoread						" Automatically refreshes files for changes done by another program
+
 
 " Plugins Section Starts here
 call plug#begin('~/.vim/plugged')
@@ -39,4 +43,5 @@ call plug#end()
 " Plugins Section Ends here
 " All Plugin specific config for vim will load below to keep it clear
 let NERDTreeShowHidden=1 		" Shows hidden files from within NERDTree
-colorscheme sublimemonokai
+let g:NERDTreeWinPos = "left"
+colorscheme sublimemonokai 		" Monokai color scheme
