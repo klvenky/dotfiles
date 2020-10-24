@@ -30,8 +30,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin' 			" A plugin for showing git status of a fil
 Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activity in vim.
 Plug 'kien/ctrlp.vim'					" Ctrl+P functionality for vim for picking files in the current project
 
-
+" Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'				" Status bar for vim
+Plug 'dense-analysis/ale'				" Error notifier for vim
+
 
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
@@ -45,3 +47,26 @@ call plug#end()
 let NERDTreeShowHidden=1 		" Shows hidden files from within NERDTree
 let g:NERDTreeWinPos = "left"
 colorscheme sublimemonokai 		" Monokai color scheme
+
+
+" Golang specific configuration for vim-go plugin using (experimental settings) golang gopls
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:ale_linters = {'go': ['gopls'] } 			"  sends go lint output to ale
+let g:go_fmt_command = "goimports"    			" Run goimports along gofmt on each save
+let g:go_auto_type_info = 1           			" Automatically get signature/type info for object under cursor
+
+" Places all temporary files under the same directory.
+" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
+" Saving might fail for the first time when the setup is done. 
+" This can be because by default the files folder doesn't exist
+set backup
+set backupdir   =$HOME/.vim/files/backup/
+set backupext   =-vimbackup
+set backupskip  =
+set directory   =$HOME/.vim/files/swap/
+set updatecount =100
+set undofile
+set undodir     =$HOME/.vim/files/undo/
+" set viminfo     ='100,n$HOME/.vim/files/info/viminfo
+

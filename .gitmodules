@@ -19,3 +19,6 @@
 [submodule "vim/plugged/vim-airline"]
 	path = vim/plugged/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/plugged/ale"]
+	path = vim/plugged/ale
+	url = https://github.com/dense-analysis/ale
