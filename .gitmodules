@@ -22,3 +22,6 @@
 [submodule "vim/plugged/ale"]
 	path = vim/plugged/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "vim/plugged/onedark.vim"]
+	path = vim/plugged/onedark.vim
+	url = https://github.com/joshdick/onedark.vim

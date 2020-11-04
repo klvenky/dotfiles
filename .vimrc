@@ -18,7 +18,8 @@ set autoindent						" Creates indents based on the previous line. Read from http
 " set ruler						" shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
 set hidden						" Switch between buffers without having to save first. Not clear on what this option really does. But could be helpful. Needs some thorough reading in depth
 set autoread						" Automatically refreshes files for changes done by another program
-
+set splitright
+set splitbelow
 
 " Plugins Section Starts here
 call plug#begin('~/.vim/plugged')
@@ -29,6 +30,7 @@ Plug 'preservim/nerdtree' 				" A file browser for vim
 Plug 'Xuyuanp/nerdtree-git-plugin' 			" A plugin for showing git status of a file/folder in nerdtree view
 Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activity in vim.
 Plug 'kien/ctrlp.vim'					" Ctrl+P functionality for vim for picking files in the current project
+Plug 'joshdick/onedark.vim'
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'				" Status bar for vim
@@ -38,16 +40,18 @@ Plug 'dense-analysis/ale'				" Error notifier for vim
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 	" go language support for vim.
-
-
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
 " Plugins Section Ends here
 " All Plugin specific config for vim will load below to keep it clear
 let NERDTreeShowHidden=1 		" Shows hidden files from within NERDTree
 let g:NERDTreeWinPos = "left"
-colorscheme sublimemonokai 		" Monokai color scheme
-
+" colorscheme sublimemonokai 		" Monokai color scheme
+colorscheme onedark
 
 " Golang specific configuration for vim-go plugin using (experimental settings) golang gopls
 let g:go_def_mode='gopls'
