@@ -10,6 +10,7 @@ endif
 filetype plugin indent on  				" Load plugins according to detected filetype.
 syntax on                  				" Enable syntax highlighting.
 set number						" shows line numbers
+set relativenumber					" enabled relative numbers
 set wrapscan 						" wraps search around when reaches either end
 set showcmd						" Show already typed keys when more are expected.
 set incsearch          		   	 		" Highlight while searching with / or ?.
@@ -40,10 +41,6 @@ Plug 'dense-analysis/ale'				" Error notifier for vim
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 	" go language support for vim.
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 call plug#end()
 " Plugins Section Ends here
@@ -73,4 +70,10 @@ let g:go_auto_type_info = 1           			" Automatically get signature/type info
 " set undofile
 " set undodir     =$HOME/.vim/files/undo/
 " set viminfo     ='100,n$HOME/.vim/files/info/viminfo
+" https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
