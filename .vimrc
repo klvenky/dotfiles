@@ -10,7 +10,7 @@ endif
 filetype plugin indent on  				" Load plugins according to detected filetype.
 syntax on                  				" Enable syntax highlighting.
 set number						" shows line numbers
-set relativenumber					" enabled relative numbers
+" set relativenumber					" enabled relative numbers
 set wrapscan 						" wraps search around when reaches either end
 set showcmd						" Show already typed keys when more are expected.
 set incsearch          		   	 		" Highlight while searching with / or ?.
@@ -32,6 +32,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin' 			" A plugin for showing git status of a fil
 Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activity in vim.
 Plug 'kien/ctrlp.vim'					" Ctrl+P functionality for vim for picking files in the current project
 Plug 'joshdick/onedark.vim'
+Plug 'tpope/vim-commentary'				" Adds shortcuts to add comments to files
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'				" Status bar for vim
