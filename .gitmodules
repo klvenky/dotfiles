@@ -13,9 +13,6 @@
 [submodule "vim/plugged/vim-go"]
 	path = vim/plugged/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "vim/plugged/ctrlp.vim"]
-	path = vim/plugged/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
 [submodule "vim/plugged/vim-airline"]
 	path = vim/plugged/vim-airline
 	url = https://github.com/vim-airline/vim-airline
