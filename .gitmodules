@@ -25,3 +25,12 @@
 [submodule "vim/plugged/vim-commentary"]
 	path = vim/plugged/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "vim/plugged/fzf"]
+	path = vim/plugged/fzf
+	url = https://github.com/junegunn/fzf/
+[submodule "vim/plugged/fzf.vim"]
+	path = vim/plugged/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/plugged/vim-polyglot"]
+	path = vim/plugged/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot

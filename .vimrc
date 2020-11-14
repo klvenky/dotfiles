@@ -34,6 +34,8 @@ Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activ
 Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-commentary'				" Adds shortcuts to add comments to files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'				" Status bar for vim
