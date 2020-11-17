@@ -9,17 +9,17 @@ endif
 " Basic configuration for file editing & basi vim usage
 filetype plugin indent on  				" Load plugins according to detected filetype.
 syntax on                  				" Enable syntax highlighting.
-set number						            " shows line numbers
-set wrapscan 					          	" wraps search around when reaches either end
-set showcmd					            	" Show already typed keys when more are expected.
-set incsearch          		   	 		" Highlight while searching with / or ?.
-set hlsearch              				" Keep matches highlighted.
 set autoindent					        	" Creates indents based on the previous line. Read from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-" set ruler						            " shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
-set hidden						            " Switch between buffers without having to save first. Not clear on what this option really does. But could be helpful. Needs some thorough reading in depth
 set autoread						          " Automatically refreshes files for changes done by another program
-set splitright
+set hidden						            " Switch between buffers without having to save first. Not clear on what this option really does. But could be helpful. Needs some thorough reading in depth
+set hlsearch              				" Keep matches highlighted.
+set incsearch          		   	 		" Highlight while searching with / or ?.
+set number						            " shows line numbers
+set showcmd					            	" Show already typed keys when more are expected.
+" set ruler						            " shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
 set splitbelow
+set splitright
+set wrapscan 					          	" wraps search around when reaches either end
 
 " Plugins Section Starts here
 call plug#begin('~/.vim/plugged')
@@ -34,7 +34,7 @@ Plug 'tpope/vim-commentary'				            " Adds shortcuts to add comments to f
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
+" Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'	        			" Status bar for vim
@@ -79,7 +79,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
 
 map <C>/ gcc
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>

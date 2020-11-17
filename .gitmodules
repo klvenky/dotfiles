@@ -34,6 +34,3 @@
 [submodule "vim/plugged/vim-polyglot"]
 	path = vim/plugged/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "vim/plugged/vim-gitgutter"]
-	path = vim/plugged/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
