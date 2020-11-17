@@ -9,16 +9,15 @@ endif
 " Basic configuration for file editing & basi vim usage
 filetype plugin indent on  				" Load plugins according to detected filetype.
 syntax on                  				" Enable syntax highlighting.
-set number						" shows line numbers
-" set relativenumber					" enabled relative numbers
-set wrapscan 						" wraps search around when reaches either end
-set showcmd						" Show already typed keys when more are expected.
+set number						            " shows line numbers
+set wrapscan 					          	" wraps search around when reaches either end
+set showcmd					            	" Show already typed keys when more are expected.
 set incsearch          		   	 		" Highlight while searching with / or ?.
 set hlsearch              				" Keep matches highlighted.
-set autoindent						" Creates indents based on the previous line. Read from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-" set ruler						" shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
-set hidden						" Switch between buffers without having to save first. Not clear on what this option really does. But could be helpful. Needs some thorough reading in depth
-set autoread						" Automatically refreshes files for changes done by another program
+set autoindent					        	" Creates indents based on the previous line. Read from https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+" set ruler						            " shows the current cursor position. May not be required if a custom plugin like ale is used. Disabling as using vim-airline
+set hidden						            " Switch between buffers without having to save first. Not clear on what this option really does. But could be helpful. Needs some thorough reading in depth
+set autoread						          " Automatically refreshes files for changes done by another program
 set splitright
 set splitbelow
 
@@ -26,20 +25,20 @@ set splitbelow
 call plug#begin('~/.vim/plugged')
 " Add your plugins here. Format for that Plug "githubusername/repo-name"
 " Code Plugins. Not related to any programming language.
-Plug 'tpope/vim-fugitive' 				" A git wrapper for vim
-Plug 'preservim/nerdtree' 				" A file browser for vim
-Plug 'Xuyuanp/nerdtree-git-plugin' 			" A plugin for showing git status of a file/folder in nerdtree view
-Plug 'wakatime/vim-wakatime' 				" Wakatime plugin to see my weekly coding activity in vim.
-" Plug 'kien/ctrlp.vim'					" Ctrl+P functionality for vim for picking files in the current project
-Plug 'joshdick/onedark.vim'
-Plug 'tpope/vim-commentary'				" Adds shortcuts to add comments to files
+Plug 'tpope/vim-fugitive' 				           " A git wrapper for vim
+Plug 'preservim/nerdtree' 				            " A file browser for vim
+Plug 'Xuyuanp/nerdtree-git-plugin' 			      " A plugin for showing git status of a file/folder in nerdtree view
+Plug 'wakatime/vim-wakatime' 				          " Wakatime plugin to see my weekly coding activity in vim.
+Plug 'joshdick/onedark.vim'                   " One dark theme for Vim
+Plug 'tpope/vim-commentary'				            " Adds shortcuts to add comments to files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
 
 " Generic Plugins irrespective of programming language
-Plug 'vim-airline/vim-airline'				" Status bar for vim
-Plug 'dense-analysis/ale'				" Error notifier for vim
+Plug 'vim-airline/vim-airline'	        			" Status bar for vim
+Plug 'dense-analysis/ale'				              " Error notifier for vim
 
 
 " All Programming language specific/dev-tools come here. 
@@ -81,3 +80,8 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+
+map <C>/ gcc
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <C-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " This repo is used for skipping files in gitignore
