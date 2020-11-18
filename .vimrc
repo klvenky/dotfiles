@@ -43,6 +43,9 @@ Plug 'dense-analysis/ale'				              " Error notifier for vim
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 	" go language support for vim.
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 call plug#end()
 " Plugins Section Ends here
