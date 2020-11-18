@@ -33,13 +33,12 @@ Plug 'joshdick/onedark.vim'                   " One dark theme for Vim
 Plug 'tpope/vim-commentary'				            " Adds shortcuts to add comments to files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 " Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'	        			" Status bar for vim
 Plug 'dense-analysis/ale'				              " Error notifier for vim
-
 
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
@@ -50,16 +49,16 @@ call plug#end()
 " All Plugin specific config for vim will load below to keep it clear
 let NERDTreeShowHidden=1 		" Shows hidden files from within NERDTree
 let g:NERDTreeWinPos = "left"
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" Enables eslint for javascript
+let g:ale_fixers = { 'javascript': ['eslint'] , 'typescript':['eslint'] }
+
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " This repo is used for skipping files in gitignore
+
+
 " colorscheme sublimemonokai 		" Monokai color scheme
 colorscheme onedark
-
-" Golang specific configuration for vim-go plugin using (experimental settings) golang gopls
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:ale_linters = {'go': ['gopls'] } 			"  sends go lint output to ale
-let g:go_fmt_command = "goimports"    			" Run goimports along gofmt on each save
-let g:go_auto_type_info = 1           			" Automatically get signature/type info for object under cursor
-
 " Places all temporary files under the same directory.
 " https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
 " Saving might fail for the first time when the setup is done. 
@@ -75,12 +74,17 @@ let g:go_auto_type_info = 1           			" Automatically get signature/type info
 " set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 " https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " Enable the list of buffers
+
+" Golang specific configuration for vim-go plugin using (experimental settings) golang gopls
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:ale_linters = {'go': ['gopls'] } 			"  sends go lint output to ale
+let g:go_fmt_command = "goimports"    			" Run goimports along gofmt on each save
+let g:go_auto_type_info = 1           			" Automatically get signature/type info for object under cursor
+
 let g:airline#extensions#tabline#enabled = 1
 
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-map <C>/ gcc
+" Add shortcuts below
+map <C-/> gcc
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'         " This repo is used for skipping files in gitignore
