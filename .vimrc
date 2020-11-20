@@ -35,6 +35,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'	        			" Status bar for vim
