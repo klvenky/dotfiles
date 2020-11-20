@@ -45,7 +45,7 @@ Plug 'dense-analysis/ale'				              " Error notifier for vim
 " Ex: Linters, formatters, language servers etc
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 	" go language support for vim.
 Plug 'pangloss/vim-javascript'               " JavaScript support
-Plug 'leafgarland/typescript-vim'            " TypeScript syntax
+" Plug 'leafgarland/typescript-vim'            " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'              " JS and JSX syntax
 
 call plug#end()
@@ -87,6 +87,9 @@ let g:go_fmt_command = "goimports"    			" Run goimports along gofmt on each sav
 let g:go_auto_type_info = 1           			" Automatically get signature/type info for object under cursor
 
 let g:airline#extensions#tabline#enabled = 1
+let g:prettier#autoformat_config_present = 1		" Autoformat files if prettier config file is found
+let g:prettier#autoformat_config_files = ['prettier.config.js']
+let g:prettier#exec_cmd_async = 1			" Runs prettier async
 
 " Add shortcuts below
 map <C-/> gcc
@@ -97,3 +100,4 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
