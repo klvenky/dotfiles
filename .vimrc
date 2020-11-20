@@ -34,8 +34,8 @@ Plug 'tpope/vim-commentary'				            " Adds shortcuts to add comments to f
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
-Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Plug 'airblade/vim-gitgutter'                 " Shows inline git modified/new details
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " Generic Plugins irrespective of programming language
 Plug 'vim-airline/vim-airline'	        			" Status bar for vim
@@ -44,9 +44,6 @@ Plug 'dense-analysis/ale'				              " Error notifier for vim
 " All Programming language specific/dev-tools come here. 
 " Ex: Linters, formatters, language servers etc
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } 	" go language support for vim.
-Plug 'pangloss/vim-javascript'               " JavaScript support
-" Plug 'leafgarland/typescript-vim'            " TypeScript syntax
-Plug 'maxmellon/vim-jsx-pretty'              " JS and JSX syntax
 
 call plug#end()
 " Plugins Section Ends here
