@@ -44,7 +44,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
 let g:NERDTreeWinPos = "left"
-
+let NERDTreeIgnore = ['node_modules$', 'coverage$', 'dist$', '.git$']
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " Enables eslint for javascript
