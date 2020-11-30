@@ -5,14 +5,17 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
+filetype plugin indent on  							" Load plugins according to detected filetype.
 set splitright
 set splitbelow
-set number
+set number									" shows line numbers
+
+
 " Add all plugins in the below section
 call plug#begin("~/.vim/plugged")
 	Plug 'tpope/vim-fugitive' 				           	" A git wrapper for vim
-	Plug 'preservim/nerdtree' 				            	" A file browser for vim
-	Plug 'Xuyuanp/nerdtree-git-plugin' 			      		" A plugin for showing git status of a file/folder in nerdtree view
+"	Plug 'preservim/nerdtree' 				            	" A file browser for vim
+"	Plug 'Xuyuanp/nerdtree-git-plugin' 			      		" A plugin for showing git status of a file/folder in nerdtree view
 	Plug 'wakatime/vim-wakatime' 				          	" Wakatime plugin to see my weekly coding activity in vim.
 	Plug 'joshdick/onedark.vim'                   				" One dark theme for Vim
 	Plug 'tpope/vim-commentary'				            	" Adds shortcuts to add comments to files
@@ -39,12 +42,11 @@ call plug#end()
 " colorscheme sublimemonokai 		" Monokai color scheme
 colorscheme onedark
 
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-let g:NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['node_modules$', 'coverage$', 'dist$', '.git$']
+" let g:NERDTreeShowHidden = 1
+" let g:NERDTreeMinimalUI = 1
+" let g:NERDTreeStatusline = ''
+" let g:NERDTreeWinPos = "left"
+" let NERDTreeIgnore = ['node_modules$', 'coverage$', 'dist$', '.git$']
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 " Enables eslint for javascript
@@ -76,10 +78,14 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
+" Add all the options for filetype plugin here
+autocmd   FileType go source ~/.config/nvim/autoload/go.vim
+
+" File type options end up here
 
 " Add shortcuts below
 map <C-/> gcc
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+" nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <C-p> :FZF<CR>
 " Easier split navigation Ref: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
 " Ref from https://github.com/preservim/nerdtree/wiki/F.A.Q.
@@ -88,3 +94,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Resetting Leader key to space
+" let mapleader = " " 					" map leader to Space
+let mapleader = "," 					" maps comma as leader
+
+" Insert all Leader key options here
+map <leader>h :noh<CR>
+" map <leader>t :GoTest<CR> " Run Golang tests with vim-go
+map <leader>R :source ~/.config/nvim/init.vim<CR> " Refresh neovim config
+map <leader>/ gcc<CR> " comment lines
+" All leader short cuts end above
