@@ -9,7 +9,7 @@ filetype plugin indent on  							" Load plugins according to detected filetype.
 set splitright
 set splitbelow
 set number									" shows line numbers
-
+set autoread									" automatically reads updates on disk
 
 " Add all plugins in the below section
 call plug#begin("~/.vim/plugged")
@@ -62,7 +62,7 @@ let g:go_fmt_command = "goimports"    			" Run goimports along gofmt on each sav
 let g:go_auto_type_info = 1           			" Automatically get signature/type info for object under cursor
 
 let g:airline#extensions#tabline#enabled = 1
-let g:prettier#autoformat_config_present = 1		" Autoformat files if prettier config file is found
+" let g:prettier#autoformat_config_present = 1		" Autoformat files if prettier config file is found
 let g:prettier#autoformat_config_files = ['prettier.config.js']
 let g:prettier#exec_cmd_async = 1			" Runs prettier async
 let g:prettier#exec_cmd_path="~/.nvm/versions/node/v12.18.3/bin/prettier"
@@ -80,7 +80,8 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 " Add all the options for filetype plugin here
 autocmd   FileType go source ~/.config/nvim/autoload/go.vim
-
+autocmd   FileType typescript source ~/.config/nvim/autoload/typescript.vim
+autocmd   FileType javascript source ~/.config/nvim/autoload/typescript.vim
 " File type options end up here
 
 " Add shortcuts below
