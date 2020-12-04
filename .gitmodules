@@ -22,9 +22,6 @@
 [submodule "vim/plugged/onedark.vim"]
 	path = vim/plugged/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
-[submodule "vim/plugged/vim-commentary"]
-	path = vim/plugged/vim-commentary
-	url = https://github.com/tpope/vim-commentary
 [submodule "vim/plugged/fzf"]
 	path = vim/plugged/fzf
 	url = https://github.com/junegunn/fzf/
