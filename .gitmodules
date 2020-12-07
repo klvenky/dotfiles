@@ -43,3 +43,6 @@
 [submodule "vim/plugged/vim-jsx-pretty"]
 	path = vim/plugged/vim-jsx-pretty
 	url = https://github.com/maxmellon/vim-jsx-pretty
+[submodule "vim/plugged/vim-code-dark"]
+	path = vim/plugged/vim-code-dark
+	url = https://github.com/tomasiser/vim-code-dark

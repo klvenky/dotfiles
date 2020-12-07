@@ -13,11 +13,11 @@ set autoread									" automatically reads updates on disk
 
 " Add all plugins in the below section
 call plug#begin("~/.vim/plugged")
-	Plug 'tpope/vim-fugitive' 				           	" A git wrapper for vim
-	Plug 'preservim/nerdtree' 				            	" A file browser for vim
-	Plug 'Xuyuanp/nerdtree-git-plugin' 			      		" A plugin for showing git status of a file/folder in nerdtree view
+	" Plug 'tpope/vim-fugitive' 				           	" A git wrapper for vim
+	" Plug 'preservim/nerdtree' 				            	" A file browser for vim
+	" Plug 'Xuyuanp/nerdtree-git-plugin' 			      		" A plugin for showing git status of a file/folder in nerdtree view
 	Plug 'wakatime/vim-wakatime' 				          	" Wakatime plugin to see my weekly coding activity in vim.
-	Plug 'joshdick/onedark.vim'                   				" One dark theme for Vim
+	Plug 'tomasiser/vim-code-dark'						" VSCode Default dark theme
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 	Plug 'junegunn/fzf.vim'
 	Plug 'airblade/vim-gitgutter'                 				" Shows inline git modified/new details
@@ -38,7 +38,8 @@ call plug#begin("~/.vim/plugged")
 	
 call plug#end()
 " colorscheme sublimemonokai 		" Monokai color scheme
-colorscheme onedark
+" colorscheme onedark
+colorscheme codedark
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
@@ -70,6 +71,7 @@ let g:go_fmt_command = "goimports"    			" Run goimports along gofmt on each sav
 let g:go_auto_type_info = 1           			" Automatically get signature/type info for object under cursor
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'codedark'
 " let g:prettier#autoformat_config_present = 1		" Autoformat files if prettier config file is found
 let g:prettier#autoformat_config_files = ['prettier.config.js']
 let g:prettier#exec_cmd_async = 1			" Runs prettier async
